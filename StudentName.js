@@ -48,9 +48,11 @@ let testSampleList = [
     "Zar",
 ];
 
-function wordLengthClassifier(wordsList) {
-    // :)
-}
+const longestWord = testSampleList.filter(word => word.length > 9);
+console.log(longestWord);
+
+const shortestWord = testSampleList.filter(word => word.length < 4);
+console.log(shortestWord);
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
