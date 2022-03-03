@@ -3,10 +3,10 @@
 /*Dada una cadena de texto (string) separe y muestre en consola los caracteres de forma desordenada uno por línea, 1 caracter a la vez.*/
 
 let testWord = "esternocleidomastoideo";
-function wordCutter(word) {
-   // :)
-}
-wordCutter(testWord);
+
+let wordCut = [...testWord];
+console.log(wordCut);
+wordCut.sort();
 
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
