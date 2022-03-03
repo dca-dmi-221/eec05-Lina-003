@@ -79,9 +79,8 @@ function lettersCounter(objectContainer) {
 let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
 
-function arrayJoiner(listA, listB) {
- // :)
-}
+let arrayJoiner = wordArrayA.concat(wordArrayB);
+console.log(arrayJoiner);
 
 
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
