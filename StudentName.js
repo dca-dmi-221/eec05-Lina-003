@@ -115,8 +115,14 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
+    let theLists = objectMultiContainer.listA.concat(objectMultiContainer.listB);
+    for (let i = 0; i < theLists.length; i++) {
+        theLists[i] = theLists[i].replace(/[aeiou]/g, '');        
+    }
+    console.log(theLists);
 }
+
+vocalsRemoverFromObject(testObjMultiContainer);
 
 console.log(vocalsRemoverFromObject(testObjMultiContainer));
 
