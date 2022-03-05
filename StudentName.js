@@ -3,10 +3,10 @@
 /*Dada una cadena de texto (string) separe y muestre en consola los caracteres de forma desordenada uno por línea, 1 caracter a la vez.*/
 
 let testWord = "esternocleidomastoideo";
-function wordCutter(word) {
-   // :)
-}
-wordCutter(testWord);
+
+let wordCut = [...testWord];
+console.log(wordCut);
+wordCut.sort();
 
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
@@ -48,9 +48,11 @@ let testSampleList = [
     "Zar",
 ];
 
-function wordLengthClassifier(wordsList) {
-    // :)
-}
+const longestWord = testSampleList.filter(word => word.length > 9);
+console.log(longestWord);
+
+const shortestWord = testSampleList.filter(word => word.length < 4);
+console.log(shortestWord);
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
@@ -79,9 +81,8 @@ function lettersCounter(objectContainer) {
 let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
 
-function arrayJoiner(listA, listB) {
- // :)
-}
+let arrayJoiner = wordArrayA.concat(wordArrayB);
+console.log(arrayJoiner);
 
 
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
@@ -91,8 +92,19 @@ let testWordToExplore = "amar";
 let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "ramon", "omar"];
 
 function anagramVerifier(wordToExplore, listOfWords) {
-   // :)
+    let posAnagram = []
+    listOfWords.forEach((word2, number) => {
+        const wordArrayInOrder = word2.split("").sort().join("")
+        const wordMethodInOrder = wordToExplore.split("").sort().join("")
+
+        if (wordArrayInOrder === wordMethodInOrder) {
+            posAnagram.push(number)
+        }
+    })
+    return posAnagram
 }
+
+console.log(anagramVerifier(testWordToExplore, wordsToVerify));
 
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
@@ -103,8 +115,14 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
+    let theLists = objectMultiContainer.listA.concat(objectMultiContainer.listB);
+    for (let i = 0; i < theLists.length; i++) {
+        theLists[i] = theLists[i].replace(/[aeiou]/g, '');        
+    }
+    console.log(theLists);
 }
+
+vocalsRemoverFromObject(testObjMultiContainer);
 
 console.log(vocalsRemoverFromObject(testObjMultiContainer));
 
